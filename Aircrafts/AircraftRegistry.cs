@@ -56,9 +56,11 @@ internal static class AircraftRegistry
         new[] { "AH-64D" },
         c => new AH64D_Listener(c.Options, c.IsPilot, c.SwitchWithSeat));
 
+    // The CJS Super Hornet mod (FA-18E/F, EA-18G) flies on ED's Hornet cockpit, and DCS-BIOS'
+    // FA-18C_hornet module lists those names among its own, so the Hornet listener drives them as is.
     public static readonly AircraftDescriptor FA18C = new(
         20, "F/A-18C", "FA-18C_hornet.json", "Resources/a10c-font-21x31.json", false,
-        new[] { "FA-18C" },
+        new[] { "FA-18C", "FA-18E", "FA-18F", "EA-18G" },
         c => new FA18C_Listener(c.Options));
 
     public static readonly AircraftDescriptor CH47 = new(
